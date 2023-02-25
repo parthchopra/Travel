@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Travel.Domain\Travel.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.5.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Common\Behaviors\" />
+    <None Remove="Common\Exceptions\" />
+    <None Remove="Common\Interfaces\" />
+    <None Remove="Dtos\" />
+    <None Remove="Dtos\Email\" />
+    <None Remove="Dtos\Tour\" />
+    <None Remove="Common\Mappings\" />
+    <None Remove="TourLists\" />
+    <None Remove="TourLists\Commands\" />
+    <None Remove="TourLists\Queries\" />
+    <None Remove="TourLists\Queries\ExportTours\" />
+    <None Remove="TourLists\Queries\GetTours\" />
+    <None Remove="TourLists\Commands\CreateTourList\" />
+    <None Remove="TourLists\Commands\DeleteTourList\" />
+    <None Remove="TourLists\Commands\UpdateTourList\" />
+    <None Remove="TourPackages\" />
+    <None Remove="TourPackages\Commands\" />
+    <None Remove="TourPackages\Commands\CreateTourPackage\" />
+    <None Remove="TourPackages\Commands\UpdateTourPackage\" />
+    <None Remove="TourPackages\Commands\DeleteTourPackage\" />
+    <None Remove="TourPackages\Commands\UpdateTourPackageDetail\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Common\Behaviors\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\Interfaces\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Dtos\Email\" />
+    <Folder Include="Dtos\Tour\" />
+    <Folder Include="Common\Mappings\" />
+    <Folder Include="TourLists\" />
+    <Folder Include="TourLists\Commands\" />
+    <Folder Include="TourLists\Queries\" />
+    <Folder Include="TourLists\Queries\ExportTours\" />
+    <Folder Include="TourLists\Queries\GetTours\" />
+    <Folder Include="TourLists\Commands\CreateTourList\" />
+    <Folder Include="TourLists\Commands\DeleteTourList\" />
+    <Folder Include="TourLists\Commands\UpdateTourList\" />
+    <Folder Include="TourPackages\" />
+    <Folder Include="TourPackages\Commands\" />
+    <Folder Include="TourPackages\Commands\CreateTourPackage\" />
+    <Folder Include="TourPackages\Commands\UpdateTourPackage\" />
+    <Folder Include="TourPackages\Commands\DeleteTourPackage\" />
+    <Folder Include="TourPackages\Commands\UpdateTourPackageDetail\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
