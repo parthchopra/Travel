@@ -2,10 +2,11 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Travel.WebApi.Controllers.v1
+namespace Travel.WebApi.Controllers
 {
-    [ApiVersion("1.0", Deprecated = true)]
-	public class WeatherForecastController : ApiController
+    [ApiController]
+    [Route("[controller]")]
+    public class WeatherForecastController : ApiController
 	{      
         private static readonly string[] Summaries = new[]
         {

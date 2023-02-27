@@ -26,13 +26,15 @@ namespace Travel.Application.TourLists.Queries.GetTours
 
         public async Task<ToursVm> Handle(GetToursQuery request, CancellationToken cancellationToken)
         {
-            return new ToursVm
+            var toursVm =  new ToursVm
             {
                 Lists = await _context.TourLists
                 .ProjectTo<TourListDto>(_mapper.ConfigurationProvider)
                 .OrderBy(t => t.City)
                 .ToListAsync(cancellationToken)
             };
+
+            return toursVm;
         }
     }
 }

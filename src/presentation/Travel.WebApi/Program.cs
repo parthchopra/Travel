@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Travel.WebApi.Helpers;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Mvc;
@@ -35,39 +34,20 @@ internal class Program
             );
 
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen(c => c.OperationFilter<SwaggerDefaultValues>());
-
-        builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-
-        builder.Services.AddApiVersioning(config =>
+        builder.Services.AddSwaggerGen(c =>
         {
-            config.DefaultApiVersion = new ApiVersion(1, 0);
-            config.AssumeDefaultVersionWhenUnspecified = true;
-            config.ReportApiVersions = true;
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Travel.WebApi", Version = "v1" });
         });
 
-        builder.Services.AddVersionedApiExplorer(options =>
-        {
-            options.GroupNameFormat = "'v'VVV";
-        });
-
-        //SerilogConfiguration.Configure(builder.Logging);
 
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
+            app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            var provider = app.Services.GetService<IApiVersionDescriptionProvider>();
-            app.UseSwaggerUI(c =>
-            {
-                foreach(var description in provider!.ApiVersionDescriptions)
-                {
-                    c.SwaggerEndpoint(
-                            $"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
-                }
-            });
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Travel.WebApi v1"));
         }
 
         app.UseHttpsRedirection();

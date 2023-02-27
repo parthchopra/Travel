@@ -12,6 +12,8 @@ using Travel.Domain.Entities;
 
 namespace Travel.WebApi.Controllers.v1
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class TourListsController : ApiController
 	{
         [HttpGet]

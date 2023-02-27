@@ -3,11 +3,10 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 
-namespace Travel.WebApi.Controllers.v1
+namespace Travel.WebApi.Controllers
 {
-	[ApiVersion("1.0")]
 	[ApiController]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/[controller]")]
     public abstract class ApiController : ControllerBase
 	{
         private IMediator _mediator = default!;

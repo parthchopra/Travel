@@ -39,12 +39,9 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
-    <None Remove="Controllers\v1\" />
     <None Remove="Filters\" />
-    <None Remove="Helpers\" />
     <None Remove="Microsoft.AspNetCore.Mvc.Versioning" />
     <None Remove="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" />
-    <None Remove="Controllers\v2\" />
     <None Remove="Serilog.Sinks.File" />
     <None Remove="Serilog.Sinks.SQLite" />
     <None Remove="Serilog.Exceptions" />
@@ -55,9 +52,6 @@
     <None Remove="Serilog.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\v1\" />
     <Folder Include="Filters\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Controllers\v2\" />
   </ItemGroup>
 </Project>
