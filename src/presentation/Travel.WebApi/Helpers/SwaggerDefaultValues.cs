@@ -21,7 +21,7 @@ namespace Travel.WebApi.Helpers
                 var description = apiDescription.ParameterDescriptions.First(
                     pd => pd.Name == parameter.Name);
 
-                parameter.Description ??= description.ModelMetadata.Description;
+                parameter.Description ??= description.ModelMetadata?.Description ?? string.Empty;
 
                 if (parameter.Schema.Default == null && description.DefaultValue != null)
                     parameter.Schema.Default = new OpenApiString(description.DefaultValue.ToString());

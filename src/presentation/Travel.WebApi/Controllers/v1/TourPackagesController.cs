@@ -10,7 +10,7 @@ using Travel.Data.Contexts;
 using Travel.Domain.Entities;
 
 namespace Travel.WebApi.Controllers.v1
-{
+{    
     public class TourPackagesController : ApiController
     {
         [HttpPost("{id}")]

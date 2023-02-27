@@ -37,6 +37,7 @@
     <None Remove="TourPackages\Commands\UpdateTourPackage\" />
     <None Remove="TourPackages\Commands\DeleteTourPackage\" />
     <None Remove="TourPackages\Commands\UpdateTourPackageDetail\" />
+    <None Remove="Dtos\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -61,6 +62,7 @@
     <Folder Include="TourPackages\Commands\UpdateTourPackage\" />
     <Folder Include="TourPackages\Commands\DeleteTourPackage\" />
     <Folder Include="TourPackages\Commands\UpdateTourPackageDetail\" />
+    <Folder Include="Dtos\User\" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>

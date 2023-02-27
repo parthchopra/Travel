@@ -25,35 +25,18 @@
     <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
     <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Travel.Application\Travel.Application.csproj" />
     <ProjectReference Include="..\..\infrastructure\Travel.Data\Travel.Data.csproj" />
     <ProjectReference Include="..\..\infrastructure\Travel.Shared\Travel.Shared.csproj" />
+    <ProjectReference Include="..\..\infrastructure\Travel.Identity\Travel.Identity.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Microsoft.EntityFrameworkCore.Sqlite.Design" />
-    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
-    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
-    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
-    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
-    <None Remove="Controllers\v1\" />
-    <None Remove="Filters\" />
-    <None Remove="Helpers\" />
-    <None Remove="Microsoft.AspNetCore.Mvc.Versioning" />
-    <None Remove="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" />
-    <None Remove="Controllers\v2\" />
-    <None Remove="Serilog.Sinks.File" />
-    <None Remove="Serilog.Sinks.SQLite" />
-    <None Remove="Serilog.Exceptions" />
-    <None Remove="Serilog.Formatting.Compact" />
-    <None Remove="Serilog.Enrichers.Environment" />
-    <None Remove="Serilog.Enrichers.Process" />
-    <None Remove="Serilog.Enrichers.Thread" />
-    <None Remove="Serilog.AspNetCore" />
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\v1\" />
     <Folder Include="Filters\" />

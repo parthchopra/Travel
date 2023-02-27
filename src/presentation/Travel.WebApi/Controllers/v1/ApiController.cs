@@ -2,10 +2,12 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Travel.Identity.Helpers;
 
 namespace Travel.WebApi.Controllers.v1
 {
-	[ApiVersion("1.0")]
+    [Authorize]
+    [ApiVersion("1.0")]
 	[ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     public abstract class ApiController : ControllerBase
