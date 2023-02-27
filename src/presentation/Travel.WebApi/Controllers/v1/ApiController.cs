@@ -1,19 +1,33 @@
 ﻿using System;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Travel.Identity.Helpers;
 
 namespace Travel.WebApi.Controllers.v1
 {
-	//[ApiVersion("1.0")]
+    [Authorize]
+    [ApiVersion("1.0")]
 	[ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     public abstract class ApiController : ControllerBase
 	{
-        protected readonly IMediator _mediator;
-
-        public ApiController(IMediator mediator)
+        private IMediator _mediator = default!;
+        protected IMediator Mediator
         {
-            _mediator = mediator;
+            get
+            {
+                if (_mediator != null)
+                    return _mediator;
+                else
+                {
+                    var mediator = HttpContext.RequestServices.GetService<IMediator>();
+                    if (mediator == null)
+                        throw new ArgumentNullException(nameof(mediator));
+
+                    return mediator;
+                }
+            }
         }
     }
 }
